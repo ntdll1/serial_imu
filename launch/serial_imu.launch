@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="port" default="/dev/serial_imu"/>
+    <arg name="baudrate" default="230400"/>
+    <arg name="frame_id" default="imu_link" /> 
+    <arg name="topic" default="imu" />
+    <arg name="freq" default="200" />
+    <node name="serial_imu" pkg="serial_imu"  type="serial_imu.py" output="screen">
+        <param name="port" value='$(arg port)'/>
+        <param name="baudrate" value="$(arg baudrate)"/>  
+        <param name="frame_id" value="$(arg frame_id)"/>
+        <param name="topic" value="$(arg topic)"/>
+        <param name="freq" value="$(arg freq)"/>
+    </node>
+</launch>

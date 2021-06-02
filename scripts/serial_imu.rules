@@ -1,0 +1,8 @@
+# set the udev rule , make the device_port
+
+# stm32 vcp
+#KERNEL=="ttyACM*", ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="e9ad", SYMLINK+="serial_imu", GROUP="dialout", MODE:="0777"
+
+# ch340
+KERNEL=="ttyUSB*", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", SYMLINK+="serial_imu", MODE:="0777", GROUP:="dialout"
+
